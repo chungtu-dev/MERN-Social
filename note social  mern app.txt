@@ -1,0 +1,22 @@
+redux-saga -> xử lý các sync effect
+
+server:
+	express: thư viện của nodejs tạo các routing cho app
+	mongoose: tạo các model cho database
+	body-parser, cors: spread middleware
+	nodemon: giúp giữ nguyên trạng thái server ko cần chạy lại khi có sự thay đổi trong file js
+
+package.json:
+	"type": "module", => dùng để config import các file (import * from 'file') như ở FE
+
+----------------------
+cấu trúc redux redux-saga:
+	view thực hiện action => action được đưa đến reducer => reducer sẽ chứa các logic xử lý các action tương ứng
+	redux-saga: nằm giữa action và reducer
+	
+	ở redux-saga:
+	trước khi action được đưa đến reducer thì sẽ thông qua redux-saga để call side effect như API => khi có dữ liệu trả về từ API thì sẽ được gọi vào reducer và cập nhật lại store
+	
+
+get ko có body, khi truyền dữ liệu thì get sẽ bao gồm các param trên url
+post ko có param trên url, các param được đặt bên trong body

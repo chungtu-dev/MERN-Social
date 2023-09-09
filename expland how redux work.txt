@@ -1,0 +1,11 @@
+App.js
+	=> dispatch(actions.getPosts.getPostsRequest())
+	- khi có action được gọi -> action này sẽ được đưa đến redux-saga trước khi đến reducer
+
+sagas:
+	=> func mySaga() -> yield takeLatest(actions.getPosts.getPostsRequest, fetchPostSaga)
+	- actions.getPosts.getPostsRequest: lắng nghe 1 resq và fetchPostSaga sẽ được thực thi và gọi đến API get posts
+	
+	- sau khi resq thành công thì trả data vào cho getPostSuccess thông qua actions.getPosts.getPostSuccess (posts.js), tiến hành cập nhật lại store
+
+	- khi ở UI gọi action nào từ store tương ứng sẽ được re-render lại
