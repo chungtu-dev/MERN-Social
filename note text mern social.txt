@@ -1,0 +1,15 @@
+text for sagas:
+
+	code line:
+	const posts = yield call(api.func)
+	
+	call(function) -> in redux-saga/effects
+	+ thực thi func thì dùng effect call này
+	+ trường hợp gọi func là 1 promise thì sẽ đợi cho func hoàn thành xong và trả ra resolve thì sẽ hoàn thành yield và trả ra kết quả cho posts.
+
+https://www.youtube.com/watch?v=khcjRUZCufs&t=2133s&ab_channel=HoleTex
+47:24 -> put
+
+	put(action(posts))
+	+ put sẽ trigger 1 action và truyền vào kết quả (posts) từ api trả về
+	+ sau đó sẽ gọi đến type action tương ứng trong ruducer/posts.js
